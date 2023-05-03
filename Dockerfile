@@ -1,10 +1,10 @@
-FROM ubuntu:18.04
-RUN DEBIAN_FRONTEND=noninteractive apt-get update
-RUN DEBIAN_FRONTEND=noninteractive apt-get upgrade -y
+FROM redhat/ubi8
+RUN DEBIAN_FRONTEND=noninteractive yum update
+RUN DEBIAN_FRONTEND=noninteractive yum upgrade -y
 
-RUN DEBIAN_FRONTEND=noninteractive apt-get install -y -qq --no-install-recommends \
-    apt-transport-https \
-    apt-utils \
+RUN DEBIAN_FRONTEND=noninteractive yum install -y -qq --no-install-recommends \
+    yum-transport-https \
+    yum-utils \
     ca-certificates \
     curl \
     git \
