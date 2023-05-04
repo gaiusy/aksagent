@@ -1,10 +1,10 @@
-FROM redhat/ubi8
-RUN DEBIAN_FRONTEND=noninteractive yum update
-RUN DEBIAN_FRONTEND=noninteractive yum upgrade -y
+FROM ubuntu:20.04
+RUN DEBIAN_FRONTEND=noninteractive apt-get update
+RUN DEBIAN_FRONTEND=noninteractive apt-get upgrade -y
 
-RUN DEBIAN_FRONTEND=noninteractive yum install -y -qq --no-install-recommends \
-    yum-transport-https \
-    yum-utils \
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y -qq --no-install-recommends \
+    apt-transport-https \
+    apt-utils \
     ca-certificates \
     curl \
     git \
